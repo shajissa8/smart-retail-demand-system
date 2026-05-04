@@ -1,1 +1,1 @@
-# smart-retail-demand-system
+# Smart Retail Demand System
