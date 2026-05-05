@@ -60,9 +60,6 @@ This reflects real-world uncertainty: near-term momentum is reliable; long-term 
  
 | Metric | Baseline | Nudged | Improvement |
 |--------|----------|--------|-------------|
-| MAE | 38,366 | 34,740 | **−9.5%** |
-| sMAPE | 2.18% | 1.99% | **−8.7%** |
-| WMAPE | 2.19% | 1.99% | **−9.1%** |
 | MASE | 0.476 | 0.431 | **−9.5%** |
 | WQL | 0.0219 | 0.0199 | **−9.1%** |
  
@@ -70,9 +67,6 @@ This reflects real-world uncertainty: near-term momentum is reliable; long-term 
  
 | Metric | Baseline | Nudged | Improvement |
 |--------|----------|--------|-------------|
-| MAE | 43,726 | 42,464 | **−2.9%** |
-| sMAPE | 2.51% | 2.45% | **−2.7%** |
-| WMAPE | 2.50% | 2.43% | **−2.8%** |
 | MASE | 0.542 | 0.527 | **−2.9%** |
 | WQL | 0.0250 | 0.0243 | **−2.8%** |
  
@@ -237,6 +231,6 @@ Questions about the nudger, results, or architecture? Open an issue or reach out
  
 **Last Updated:** May 2026  
 **Model:** Chronos T5-Small (Amazon)  
-**Dataset:** Walmart Store 10 (weekly sales, 2+ years)  
+**Dataset:** Walmart Recruiting Sotres Sales Dataset, M5 Forecasting Accuracy Challenge Dataset (weekly) 
 **Validation:** Holdout test set, MASE & WQL metrics
  
