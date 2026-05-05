@@ -149,10 +149,9 @@ This reflects real-world uncertainty: near-term momentum is reliable; long-term 
 2. Login → Navigate to **Home**
 3. Upload CSV with columns: `Date`, `Store`, `Sales` (or similar keywords)
 4. View 12-week forecast with SMI nudges applied
-5. Compare models on **Comparison** page (admin: view user analytics)
 ---
  
-## How the Nudger Works (Plain English)
+## How the Nudger Works
  
 Imagine a retail store's sales data shows a spike over the last 2 months—maybe a seasonal trend or viral product moment. A standard forecasting model (like Chronos) learns this and predicts a moderate increase. But if the spike is *accelerating* and staying consistent, the actual demand might be even higher. The nudger detects this momentum and says: "Sales are not just high—they're *getting* higher. Bump up the forecast by 1.4% for the next few weeks."
  
@@ -166,9 +165,6 @@ The nudger never retains the model. It's a **post-processor**: it takes whatever
  
 | Metric | Definition | Why It Matters |
 |--------|-----------|-----------------|
-| **MAE** | Mean Absolute Error | Average forecast error in units (direct inventory impact) |
-| **sMAPE** | Symmetric MAPE | Percentage error, symmetric (better for low-value forecasts) |
-| **WMAPE** | Weighted MAPE | Error weighted by actual demand (prioritizes high-volume periods) |
 | **MASE** | Mean Absolute Scaled Error | Compared to naive forecast; >1 = worse than guessing last week's value |
 | **WQL** | Weighted Quantile Loss | Penalizes underage/overage asymmetrically (inventory cost proxy) |
  
@@ -179,26 +175,28 @@ The nudger never retains the model. It's a **post-processor**: it takes whatever
 ```
 smart-retail-demand-system/
 ├── backend/
-│   ├── index.js                    # Express server, auth routes, forecast endpoint
-│   ├── db/app.db                   # SQLite database
-│   └── uploads/                    # Temporary CSV storage
+│   ├── index.js                      # Express server, auth routes, forecast endpoint
+│   ├── db/app.db                     # SQLite database
+│   └── uploads/                      # Temporary CSV storage
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── Login/              # Auth UI
-│   │   │   ├── Home/               # CSV upload & features
-│   │   │   ├── Forecast/           # 12-week view with charts
-│   │   │   ├── ForecastComparison/ # Model comparison
-│   │   │   └── Admin/              # User management
-│   │   └── App.jsx                 # Router
+│   │   │   ├── Login/                # Auth UI
+│   │   │   ├── Home/                 # CSV upload & features
+│   │   │   ├── Forecast/             # 12-week view with charts
+│   │   │   ├── ForecastComparison/   # Model comparison
+│   │   │   └── Admin/                # User management
+│   │   └── App.jsx                   # Router
+│   │   └── App.css                 
+│   │   └── index.css
+│   │   └── main.jsx
 │   └── vite.config.js
 ├── ml/
-│   ├── app.py                      # Flask endpoint for prediction
-│   ├── model.py                    # Chronos pipeline, forecast logic
-│   ├── smi_nudger.py               # SMI signal computation & nudge application
+│   ├── app.py                        # Flask endpoint for prediction
+│   ├── model.py                      # Chronos pipeline, forecast logic
+│   ├── smi_nudger.py                 # SMI signal computation & nudge application
 │   ├── data_preprocessing_chronos.py # CSV cleaning, frequency alignment
-│   └── preprocess_service.py       # Entry point from Node.js
-└── README.md
+│   └── preprocess_service.py         # Entry point from Node.js
 ```
  
 ---
