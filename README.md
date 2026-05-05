@@ -228,7 +228,10 @@ Questions about the nudger, results, or architecture? Open an issue or reach out
 ---
  
 **Last Updated:** May 2026  
+
 **Model:** Chronos T5-Small (Amazon)  
-**Dataset:** Walmart Recruiting Sotres Sales Dataset, M5 Forecasting Accuracy Challenge Dataset (weekly) 
+
+**Dataset:** Walmart Recruiting Sotres Sales Dataset, M5 Forecasting Accuracy Challenge Dataset (weekly)
+
 **Validation:** Holdout test set, MASE & WQL metrics
  
