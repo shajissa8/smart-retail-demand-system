@@ -1,0 +1,3 @@
+Model,Test_MAE,Test_sMAPE,Test_WMAPE,Test_MASE,Test_WQL
+Classical_Models_Baseline,338.61,61.988,50.709,0.6593,0.5071
+SMI_Nudged,338.21,61.9269,50.6489,0.6585,0.5065
