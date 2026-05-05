@@ -224,8 +224,8 @@ This is a validated submission and competitive solution. For academic or commerc
 ---
  
 ## License
- 
-[Your choice: MIT / Apache 2.0 / etc.]
+
+MIT License
  
 ---
  
