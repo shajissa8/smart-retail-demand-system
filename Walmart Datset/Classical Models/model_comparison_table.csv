@@ -1,0 +1,5 @@
+Model,Compile Time (s),Memory (GB),FLOPs (TF)
+"ARIMA(7,0,7)",0.555,0.003,0.13
+STL-ARIMA,0.522,0.002,0.26
+Prophet,1.414,0.002,6.5
+LSTM,5.846,0.071,123615.0
