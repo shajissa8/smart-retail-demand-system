@@ -1,3 +1,0 @@
-Model,Test_MAE,Test_sMAPE,Test_WMAPE,Test_MASE,Test_WQL
-Prophet_Baseline,43726.22,2.5147,2.5003,0.5424,0.025
-SMI_Nudged_Prophet,42464.49,2.4458,2.4282,0.5268,0.0243
