@@ -174,31 +174,95 @@ The nudger never retains the model. It's a **post-processor**: it takes whatever
  
 ```
 smart-retail-demand-system/
-├── backend/
-│   ├── index.js                      # Express server, auth routes, forecast endpoint
-│   ├── db/app.db                     # SQLite database
-│   └── uploads/                      # Temporary CSV storage
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Login/                # Auth UI
-│   │   │   ├── Home/                 # CSV upload & features
-│   │   │   ├── Forecast/             # 12-week view with charts
-│   │   │   ├── ForecastComparison/   # Model comparison
-│   │   │   └── Admin/                # User management
-│   │   └── App.jsx                   # Router
-│   │   └── App.css                 
-│   │   └── index.css
-│   │   └── main.jsx
-│   └── vite.config.js
-├── ml/
-│   ├── app.py                        # Flask endpoint for prediction
-│   ├── model.py                      # Chronos pipeline, forecast logic
-│   ├── smi_nudger.py                 # SMI signal computation & nudge application
-│   ├── data_preprocessing_chronos.py # CSV cleaning, frequency alignment
-│   └── preprocess_service.py         # Entry point from Node.js
+├── Chronos Inference/
+    ├── backend/
+    │   ├── index.js                      # Express server, auth routes, forecast endpoint
+    │   ├── db/app.db                     # SQLite database
+    │   └── uploads/                      # Temporary CSV storage
+    ├── frontend/
+    │   ├── src/
+    │   │   ├── components/
+    │   │   │   ├── Login/                # Auth UI
+    │   │   │   ├── Home/                 # CSV upload & features
+    │   │   │   ├── Forecast/             # 12-week view with charts
+    │   │   │   ├── ForecastComparison/   # Model comparison
+    │   │   │   └── Admin/                # User management
+    │   │   └── App.jsx                   # Router
+    │   │   └── App.css                 
+    │   │   └── index.css
+    │   │   └── main.jsx
+    │   └── vite.config.js
+    ├── ml/
+    │   ├── app.py                        # Flask endpoint for prediction
+    │   ├── model.py                      # Chronos pipeline, forecast logic
+    │   ├── smi_nudger.py                 # SMI signal computation & nudge application
+    │   ├── data_preprocessing_chronos.py # CSV cleaning, frequency alignment
+    │   └── preprocess_service.py         # Entry point from Node.js
+├── Datasets/
+    │   ├── M5
+            ├── m5_FOODS_3_090_CA_3_evaluation.csv
+    │   ├── Walmart
+            ├── Walmart_Full.csv
+├── Documentation/
+    ├── SMI_Nudge__A_Model_Agnostic_Post_Processing_Framework_for_Retail_Demand_Forecasting.pdf
+    ├── Smart_Retail_Demand_Forecasting_System.pdf
+├── M5 Dataset/
+    │   ├── Chronos Model Nudger
+            ├── Chronos_nudged_12weeks.csv
+            ├── chronos_12_weeks_demand.csv
+            ├── combined_nudger.py
+            ├── nudged_vs_actual_chronos.png
+            ├── nudged_vs_chronos_metrics_weekly.csv
+            ├── smi_features_store1.csv
+            ├── smi_synthesis_chart.png
+            ├── split4_test.csv
+            ├── split4_train.csv
+    │   ├── Classical Models Nudger
+            ├── Classical_Models_nudged_12weeks.csv
+            ├── combined_nudger.py
+            ├── model_comparison_plot.png
+            ├── model_comparison_table.csv
+            ├── model_comparison_table.tex
+            ├── nudged_vs_actual_classical_models.png
+            ├── nudged_vs_classical_metrics_weekly.csv
+            ├── preprocessed_chronos_store1_split.csv
+            ├── smi_synthesis_chart.png
+            ├── smi_variables_store1_train.csv
+            ├── split4_train.csv
+            ├── split4_train.csv
+            ├── stl_arima_actual_vs_predicted.csv
+            ├── walmart_12week_forecast_vs_test.csv
+            ├── walmart_forecast_vs_test_plot.png
+            ├── walmart_metrics_test.csv
+            ├── walmart_metrics_train_last12.csv
+    ├── [daily_to_weekly.py
+├── Walmart Dataset/
+    │   ├── Chronos Model
+            ├── Chronos_nudged_12weeks_store10.csv
+            ├── chronos_12_weeks_demand.csv
+            ├── combined_nudger.py
+            ├── nudged_vs_actual_chronos_store10.png
+            ├── nudged_vs_chronos_metrics_weekly_store10.csv
+            ├── preprocessed_chronos_store10_split.csv
+            ├── smi_synthesis_chart.png
+            ├── smi_variables_store10_train.csv
+            ├── split3_test.csv
+            ├── split3_train.csv
+    │   ├── Classical Models
+            ├── Prophet_nudged_12weeks.csv
+            ├── combined_nudger.py
+            ├── model_comparison_plot.png
+            ├── model_comparison_table.csv
+            ├── model_comparison_table.tex
+            ├── nudged_vs_prophet_metrics_weekly.csv
+            ├── preprocessed_chronos_store10_split.csv
+            ├── prophet_nudged_vs_actual.png
+            ├── smi_synthesis_chart.png
+            ├── smi_variables_store10_train.csv
+            ├── split3_test.csv
+            ├── split3_train.csv
+            ├── walmart_12week_forecast_vs_test.csv
 ```
- 
 ---
  
 ## Known Limitations
